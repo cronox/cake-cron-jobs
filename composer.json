@@ -1,0 +1,34 @@
+{
+    "name": "cronox/cake-cron-jobs",
+    "description": "CakePHP3 Plugin to create jobs for CRON",
+    "type": "cakephp-plugin",
+    "keywords": [
+        "cron",
+        "cron jobs",
+        "cakephp",
+        "cakephp3"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michał Jagodziński",
+            "email": "cronox.base@gmail.com",
+            "homepage": "http://cronox.info",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "cakephp/cakephp": "^3.4"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Cronox\\CronJobs\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {}
+    }
+}
+
