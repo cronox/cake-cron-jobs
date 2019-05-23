@@ -1,4 +1,21 @@
 language: php
+
+dist: trusty
+
 php:
   - 7.2
   - 7.3
+
+matrix:
+  fast_finish: true
+
+before_script:
+  - composer self-update
+  - composer validate
+  - composer install --prefer-dist --no-interaction
+
+script:
+  - vendor/bin/ecs check src --clear-cache
+
+notifications:
+  email: false

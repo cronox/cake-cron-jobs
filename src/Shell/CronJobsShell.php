@@ -6,7 +6,6 @@ use Cake\Console\Shell;
 use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
 use Cronox\CronJobs\Lib\CronJobHelper;
-use Cronox\CronJobs\Model\Entity\CronJob;
 use ReflectionMethod;
 
 class CronJobsShell extends Shell
