@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/cronox/cake-cron-jobs.svg?branch=master)](https://travis-ci.org/cronox/cake-cron-jobs)
+[![Latest Stable Version](https://poser.pugx.org/cronox/cake-cron-jobs/v/stable)](https://packagist.org/packages/cronox/cake-cron-jobs)
+[![Downloads](https://poser.pugx.org/cronox/cake-cron-jobs/d/total.png)](https://packagist.org/packages/cronox/cake-cron-jobs)
+[![Latest Version](https://poser.pugx.org/cronox/cake-cron-jobs/v/stable.png)](https://packagist.org/packages/cronox/cake-cron-jobs)
+[![License](https://poser.pugx.org/cronox/cake-cron-jobs/license.svg)](https://packagist.org/packages/cronox/cake-cron-jobs)
+
 # Installation
 
 ## Composer
