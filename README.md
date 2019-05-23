@@ -7,12 +7,12 @@ composer require cronox/cake-cron-jobs
 ## Load the Plugin
 Ensure the Plugin is loaded in your config/bootstrap.php file
 ```php
-Plugin::load('Cronox/CronJobs', ['bootstrap' => true, 'routes' => true]);
+Plugin::load('Cronox/CronJobs');
 ```
 ## Database
 Init the database table by using cakephp's migrations
 ```sh
-bin/cake migrations migrate --plugin Cronox/Mailer
+bin/cake migrations migrate --plugin Cronox/CronJobs
 ```
 
 # Example
