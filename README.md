@@ -48,3 +48,21 @@ Job is completed correctly
 ```
 
 
+# Grouped tasks
+
+```php
+try {
+    $groupEmailCode = 'Email';
+    $groupSMSCode = 'SMS';
+    CronJobHelper::create(\App\Lib\Mailer::class, 'sendMail', ['cronox@example.com','Message text'], $groupEmailCode);
+    CronJobHelper::create(\App\Lib\SmsApi::class, 'sendSMS', ['321654987','Message text'], $groupSMSCode);
+} catch (\Exception $exception) {
+    throw $exception;
+}
+```
+
+To run grouped tasks by cron add following commands to crontab:
+```sh
+bin/cake cronox/cron_jobs.cron_jobs Email
+bin/cake cronox/cron_jobs.cron_jobs SMS
+```

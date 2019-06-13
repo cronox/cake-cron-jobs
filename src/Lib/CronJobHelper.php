@@ -43,14 +43,15 @@ class CronJobHelper
      * @param $methodName
      * @param array $parameters
      * @param string $startAt
+     * @param null $code
      * @return \Cake\Datasource\EntityInterface
      * @throws \ReflectionException
      */
-    public static function create($className, $methodName, $parameters = [], $startAt = 'NOW')
+    public static function create($className, $methodName, $parameters = [], $startAt = 'NOW', $code = null)
     {
         self::checkMethod($className, $methodName, $parameters);
 
-        if ('NOW' === strtoupper($startAt)) {
+        if ('NOW' === strtoupper($startAt) || null === $startAt) {
             $startAt = date('Y-m-d H:i:s');
         } else {
             if (is_integer($startAt)) {
@@ -59,13 +60,14 @@ class CronJobHelper
             }
         }
 
-        $CronJobsTable = TableRegistry::get('CronJobs');
+        $CronJobsTable = TableRegistry::getTableLocator()->get('CronJobs');
         $jobEntity = $CronJobsTable->newEntity(
             [
                 'class_name' => $className,
                 'method_name' => $methodName,
                 'serialized_params' => serialize($parameters),
                 'start_at' => $startAt,
+                'code' => $code
             ]
         );
 

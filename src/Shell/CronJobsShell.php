@@ -6,6 +6,7 @@ use Cake\Console\Shell;
 use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
 use Cronox\CronJobs\Lib\CronJobHelper;
+use Cronox\CronJobs\Model\Entity\CronJob;
 use ReflectionMethod;
 
 class CronJobsShell extends Shell
@@ -14,11 +15,15 @@ class CronJobsShell extends Shell
     /**
      * @return bool|int|void|null
      */
-    public function main()
+    public function main($code = null)
     {
+        $whereConditions = ['start_at <' => date('Y-m-d H:i:s')];
+        if(!empty($code)){
+            $whereConditions['code'] = $code;
+        }
         $Table = TableRegistry::get('CronJobs');
         $jobs = $Table->find()
-            ->where(['start_at <' => date('Y-m-d H:i:s')])
+            ->where($whereConditions)
             ->andWhere(['ended IS' => null])
             ->all();
 
